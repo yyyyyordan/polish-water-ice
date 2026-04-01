@@ -102,13 +102,19 @@
           <span class="flavor-chip" style="--chip-color: #78350f;">Chocolate</span>
         </div>
       </div>
-      <div class="flavor-card flavor-card--featured" style="--accent: #ff922b;">
+      <div class="flavor-card flavor-card--featured flavor-card--expandable" style="--accent: #ff922b;" onclick="this.classList.toggle('expanded')">
         <div class="flavor-images">
           <img src="images/ice-cream-swirl.png" alt="Vanilla Chocolate Swirl Ice Cream Cone">
           <img src="images/ice-cream-cup.png" alt="Ice Cream Cup Swirl">
         </div>
         <h3>Ice Cream</h3>
         <p>Cone or cup &mdash; chocolate, vanilla, or mix</p>
+        <p class="flavor-tap-hint">Tap to see options</p>
+        <div class="flavor-list">
+          <span class="flavor-chip" style="--chip-color: #5c3a1e;">Chocolate</span>
+          <span class="flavor-chip" style="--chip-color: #f5e6c8; color: #333;">Vanilla</span>
+          <span class="flavor-chip" style="--chip-color: #a0724a;">Mix</span>
+        </div>
       </div>
       <div class="flavor-card flavor-card--featured" style="--accent: #20c997;">
         <div class="flavor-images">
