@@ -122,6 +122,12 @@
   font-size: 1.8rem;
 }
 
+.cat-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
 .cat-name {
   font-weight: 700;
   font-size: 0.85rem;
