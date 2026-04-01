@@ -49,7 +49,9 @@ const MENU = {
       { key: 'large',  label: 'Large',  price: 7.75 },
       { key: 'quart',  label: 'Quart',  price: 14.00 },
     ],
-    addons: [],
+    addons: [
+      { key: 'sprinkles', label: 'Sprinkles', price: 0.75 },
+    ],
   },
   'ice-cream-cone': {
     name: 'Ice Cream Cone',
