@@ -100,7 +100,7 @@ const MENU = {
   'pepsi': {
     name: 'Pepsi',
     sizes: [
-      { key: 'one', label: 'Pepsi', price: 3.50 },
+      { key: 'one', label: 'Pepsi', price: 3.25 },
     ],
     addons: [],
   },
