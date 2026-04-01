@@ -117,6 +117,13 @@ const MENU = {
     ],
     addons: [],
   },
+  'extra-item': {
+    name: '$0.75 Item',
+    sizes: [
+      { key: 'one', label: '$0.75 Item', price: 0.75 },
+    ],
+    addons: [],
+  },
 };
 
 // --- State ---
