@@ -183,11 +183,12 @@ section h2 {
   align-items: flex-end;
   gap: 0.25rem;
   margin-bottom: 0.75rem;
+  height: 100px;
 }
 
 .flavor-images img {
-  height: 100px;
-  width: auto;
+  height: 100%;
+  width: 75px;
   object-fit: contain;
   object-position: bottom;
   border-radius: 8px;
