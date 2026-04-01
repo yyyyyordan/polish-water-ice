@@ -208,6 +208,88 @@ section h2 {
   font-size: 0.95rem;
 }
 
+/* Expandable flavor card */
+.flavor-card--expandable {
+  cursor: pointer;
+}
+
+.flavor-tap-hint {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 0.5rem;
+  transition: opacity 0.3s;
+}
+
+.flavor-card--expandable.expanded .flavor-tap-hint {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.flavor-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+.flavor-card--expandable.expanded .flavor-list {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.flavor-chip {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--chip-color, #6366f1);
+}
+
+.flavor-list-label {
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.85rem;
+  color: #888;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+.flavor-card--expandable.expanded .flavor-list-label {
+  max-height: 40px;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+
+.flavor-list--always {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+.flavor-card--expandable.expanded .flavor-list--always {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+
 /* About */
 .about {
   background: #fff;
