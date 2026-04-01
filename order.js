@@ -1,55 +1,53 @@
 // ==========================================
 // Polish Water Ice — Order Calculator
-// Tax: 8.625%, rounded UP to nearest cent
+// All prices include tax
 // ==========================================
 
-const TAX_RATE = 0.08625;
-
-// --- Menu Data ---
+// --- Menu Data (prices include tax) ---
 const MENU = {
   'water-ice': {
     name: 'Polish Water Ice',
     sizes: [
-      { key: 'small',  label: 'Small',  price: 5.76 },
-      { key: 'medium', label: 'Medium', price: 6.44 },
-      { key: 'large',  label: 'Large',  price: 7.14 },
-      { key: 'quart',  label: 'Quart',  price: 12.89 },
+      { key: 'small',  label: 'Small',  price: 6.25 },
+      { key: 'medium', label: 'Medium', price: 7.00 },
+      { key: 'large',  label: 'Large',  price: 7.75 },
+      { key: 'quart',  label: 'Quart',  price: 14.00 },
     ],
     addons: [],
   },
   'slushie': {
     name: 'Slushie',
     sizes: [
-      { key: 'small', label: 'Small', detail: '16 oz', price: 7.83 },
-      { key: 'large', label: 'Large', detail: '20 oz', price: 8.76 },
+      { key: 'small', label: 'Small', detail: '16 oz', price: 8.50 },
+      { key: 'large', label: 'Large', detail: '20 oz', price: 9.50 },
     ],
     addons: [],
   },
   'ice-cap': {
     name: 'Ice Cap',
     sizes: [
-      { key: 'small', label: 'Small', detail: '16 oz', price: 7.83 },
-      { key: 'large', label: 'Large', detail: '20 oz', price: 8.76 },
+      { key: 'small', label: 'Small', detail: '16 oz', price: 8.50 },
+      { key: 'large', label: 'Large', detail: '20 oz', price: 9.50 },
     ],
     addons: [],
   },
   'polish-freeze': {
     name: 'Polish Freeze',
     sizes: [
-      { key: 'small',  label: 'Small',  price: 6.21 },
-      { key: 'medium', label: 'Medium', price: 6.91 },
-      { key: 'large',  label: 'Large',  price: 7.59 },
-      { key: 'quart',  label: 'Quart',  price: 13.81 },
+      { key: 'small',  label: 'Small',  price: 6.75 },
+      { key: 'medium', label: 'Medium', price: 7.50 },
+      { key: 'large',  label: 'Large',  price: 8.25 },
+      { key: 'quart',  label: 'Quart',  price: 15.00 },
     ],
     addons: [],
   },
   'ice-cream-cup': {
     name: 'Ice Cream Cup',
     sizes: [
-      { key: 'small',  label: 'Small',  price: 5.76 },
-      { key: 'medium', label: 'Medium', price: 6.44 },
-      { key: 'large',  label: 'Large',  price: 7.14 },
-      { key: 'quart',  label: 'Quart',  price: 12.89 },
+      { key: 'small',  label: 'Small',  price: 6.25 },
+      { key: 'medium', label: 'Medium', price: 7.00 },
+      { key: 'large',  label: 'Large',  price: 7.75 },
+      { key: 'quart',  label: 'Quart',  price: 14.00 },
     ],
     addons: [],
   },
@@ -57,18 +55,18 @@ const MENU = {
     name: 'Ice Cream Cone',
     // Cone uses a special "cone type" selector instead of sizes
     coneTypes: [
-      { key: 'regular', label: 'Regular Cone', price: 5.76 },
-      { key: 'waffle',  label: 'Waffle Cone',  price: 6.68 },
+      { key: 'regular', label: 'Regular Cone', price: 6.25 },
+      { key: 'waffle',  label: 'Waffle Cone',  price: 7.25 },
     ],
     addons: [
-      { key: 'sprinkles', label: 'Sprinkles', price: 0.69 },
+      { key: 'sprinkles', label: 'Sprinkles', price: 0.75 },
     ],
   },
   'chiller': {
     name: 'Chiller',
     sizes: [
-      { key: 'small', label: 'Small', detail: '12 oz', price: 7.83 },
-      { key: 'large', label: 'Large', detail: '16 oz', price: 8.76 },
+      { key: 'small', label: 'Small', detail: '12 oz', price: 8.50 },
+      { key: 'large', label: 'Large', detail: '16 oz', price: 9.50 },
     ],
     candyMix: [
       'Oreo', "M&M's", "Reese's PB Cups", 'Heath Bar',
@@ -79,16 +77,16 @@ const MENU = {
   'milkshake': {
     name: 'Milkshake',
     sizes: [
-      { key: 'small', label: 'Small', detail: '16 oz', price: 7.83 },
-      { key: 'large', label: 'Large', detail: '20 oz', price: 8.76 },
+      { key: 'small', label: 'Small', detail: '16 oz', price: 8.50 },
+      { key: 'large', label: 'Large', detail: '20 oz', price: 9.50 },
     ],
     addons: [],
   },
   'float': {
     name: 'Float',
     sizes: [
-      { key: 'small', label: 'Small', detail: '16 oz', price: 7.83 },
-      { key: 'large', label: 'Large', detail: '20 oz', price: 8.76 },
+      { key: 'small', label: 'Small', detail: '16 oz', price: 8.50 },
+      { key: 'large', label: 'Large', detail: '20 oz', price: 9.50 },
     ],
     addons: [],
   },
@@ -395,13 +393,9 @@ function renderOrder() {
     });
   });
 
-  // Totals — tax rounded UP
-  const subtotal = state.order.reduce((s, i) => s + i.totalPrice, 0);
-  const tax = Math.ceil(subtotal * TAX_RATE * 100) / 100;
-  const total = subtotal + tax;
+  // Totals — all prices include tax
+  const total = state.order.reduce((s, i) => s + i.totalPrice, 0);
 
-  subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-  taxEl.textContent = `$${tax.toFixed(2)}`;
   totalEl.textContent = `$${total.toFixed(2)}`;
 
   orderTotalsEl.style.display = 'block';
