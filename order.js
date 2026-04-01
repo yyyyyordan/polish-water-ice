@@ -98,9 +98,9 @@ const MENU = {
     addons: [],
   },
   'pepsi': {
-    name: 'Pepsi',
+    name: 'Soda',
     sizes: [
-      { key: 'one', label: 'Pepsi', price: 3.25 },
+      { key: 'one', label: 'Soda', price: 3.25 },
     ],
     addons: [],
   },
