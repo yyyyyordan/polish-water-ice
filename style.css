@@ -191,9 +191,6 @@ section h2 {
   object-fit: contain;
   border-radius: 8px;
   transition: transform 0.2s;
-  /* Remove black backgrounds from product photos */
-  background: transparent;
-  mix-blend-mode: multiply;
 }
 
 .flavor-images img:hover {
