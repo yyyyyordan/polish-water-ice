@@ -119,7 +119,7 @@
         <h3>Milkshake</h3>
         <p>Classic milkshake</p>
       </div>
-      <div class="flavor-card flavor-card--featured" style="--accent: #da77f2;">
+      <div class="flavor-card flavor-card--featured flavor-card--expandable" style="--accent: #da77f2;" onclick="this.classList.toggle('expanded')">
         <div class="flavor-images">
           <img src="images/chiller-cookie.png" alt="Cookie Chiller">
           <img src="images/chiller-mm.png" alt="M&M's Chiller">
@@ -127,6 +127,15 @@
         </div>
         <h3>Chiller</h3>
         <p>Ice cream blended with candy of your choice</p>
+        <p class="flavor-tap-hint">Tap to see options</p>
+        <div class="flavor-list">
+          <span class="flavor-chip" style="--chip-color: #1e1e2e;">Oreo</span>
+          <span class="flavor-chip" style="--chip-color: #b91c1c;">M&amp;M's</span>
+          <span class="flavor-chip" style="--chip-color: #ea580c;">Reese's PB Cups</span>
+          <span class="flavor-chip" style="--chip-color: #4a3728;">Snickers</span>
+          <span class="flavor-chip" style="--chip-color: #f59e0b;">Reese's Pieces</span>
+          <span class="flavor-chip" style="--chip-color: #eab308;">Butterfinger</span>
+        </div>
       </div>
       <div class="flavor-card flavor-card--featured" style="--accent: #fcc419;">
         <div class="flavor-images">
