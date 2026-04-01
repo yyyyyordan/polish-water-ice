@@ -90,6 +90,13 @@ const MENU = {
     ],
     addons: [],
   },
+  'gatorade': {
+    name: 'Gatorade',
+    sizes: [
+      { key: 'one', label: 'Gatorade', price: 3.50 },
+    ],
+    addons: [],
+  },
 };
 
 // --- State ---
