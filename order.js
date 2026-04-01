@@ -90,6 +90,20 @@ const MENU = {
     ],
     addons: [],
   },
+  'aquafina': {
+    name: 'Aquafina',
+    sizes: [
+      { key: 'one', label: 'Aquafina', price: 3.00 },
+    ],
+    addons: [],
+  },
+  'pepsi': {
+    name: 'Pepsi',
+    sizes: [
+      { key: 'one', label: 'Pepsi', price: 3.50 },
+    ],
+    addons: [],
+  },
   'gatorade': {
     name: 'Gatorade',
     sizes: [
