@@ -176,6 +176,27 @@ section h2 {
   margin-bottom: 0.75rem;
 }
 
+/* Featured card with images */
+.flavor-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.flavor-images img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.flavor-images img:hover {
+  transform: scale(1.1);
+}
+
 .flavor-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
